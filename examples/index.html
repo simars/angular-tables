@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="exampleAngularTables" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Table Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<link rel="stylesheet" type="text/css" href="node_modules/datatables/media/css/jquery.dataTables.min.css">-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+
+    <style type="text/css" class="init"></style>
+
+</head>
+
+<body>
+
+
+<div ng-controller="ExmapleCtrl">
+    <!-- angular table start -->
+    <table datatable columns="exampleCols" data="exampleData" column-defs="exampleColDefs"></table>
+    <!-- angular table end  -->
+
+
+    <table id="non-angular-table">
+        <tr>
+            <td></td>
+            <td>Column 1</td>
+            <td>Column 2</td>
+            <td>Column 3</td>
+            <td>Column 4</td>
+        </tr>
+        <tr>
+            <td>
+                <button data-ng-click="addRow()"> Add Row</button>
+            </td>
+            <td>
+                <input type="text" size="10%" ng-model="value1">
+            </td>
+            <td>
+                <input type="text" size="10%" ng-model="value2">
+            </td>
+            <td>
+                <input type="text" size="70%" ng-model="value3">
+            </td>
+            <td>
+                <input type="text" size="10%" ng-model="value4">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Try
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="5%" value="{{ 1 + 2 }}" disabled="true">
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="10%" value="Apple" disabled="true">
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="70%"
+                       value='<button type="button" ng-click="click()" >click() in example controller scope</button>'
+                       disabled="true">
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="15%" value="Fruit Plate" disabled="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Try
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="5%" value="{{ 1 / 2 }}" disabled="true">
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="10%" value="{{'A' + 'B'}}" disabled="true">
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="70%"
+                       value='<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>' disabled="true">
+            </td>
+            <td>
+                <input ng-non-bindable type="text" size="15%" value="<i>Angular Tables</i>" disabled="true">
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<!--<script type="text/javascript" language="javascript" src="node_modules/jquery/dist/jquery.min.js"></script>-->
+<!--<script type="text/javascript" language="javascript" src="node_modules/datatables/media/js/jquery.dataTables.min.js"></script>-->
+<!--<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>-->
+<!--<script type="text/javascript" src="node_modules/lodash/index.js"></script>-->
+
+
+<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" language="javascript"
+        src="//cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+
+<script type="text/javascript" src="../dist/angular-tables.js"></script>
+<script type="text/javascript" src="example.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#non-angular-table').DataTable();
+    });
+</script>
+
+</body>
+</html>
