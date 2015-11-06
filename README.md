@@ -1,6 +1,6 @@
 ### Welcome to angular-tables
 angular-tables provides a directive that brings power of [Datatables.net](https://datatables.net/reference/option/) in [Angular’s](https://angularjs.org) scope
-Try [zero-config Demo here](http://demo.simars.io/angular-tables/),
+Try [zero-config Demo here](http://simars.github.io/angular-tables/#example),
 
 ### Features
 + Manage Datables options and data for DataTables declaratively in table element (HTML)
