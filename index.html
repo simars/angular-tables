@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,7 +36,7 @@
 <p>angular-tables provides a directive that brings power of <a href="https://datatables.net/reference/option/">Datatables.net</a> in <a href="https://angularjs.org">Angular’s</a> scope
 Try <a href="http://demo.simars.io/angular-tables/">zero-config Demo here</a>,</p>
 
-<h3>
+        <h3>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h3>
 
 <ul>
@@ -52,6 +54,78 @@ Try <a href="http://demo.simars.io/angular-tables/">zero-config Demo here</a>,</
 </li>
 <li>Follow <a href="https://datatables.net/reference/option/">Datatables options</a> for configurable table options that can be used</li>
 </ul>
+<div ng-app="exampleAngularTables">
+        <div ng-controller="ExmapleCtrl">
+          <!-- angular table start -->
+          <table datatable columns="exampleCols" data="exampleData" column-defs="exampleColDefs"></table>
+          <!-- angular table end  -->
+
+
+          <table id="non-angular-table">
+            <tr>
+              <td></td>
+              <td>Column 1</td>
+              <td>Column 2</td>
+              <td>Column 3</td>
+              <td>Column 4</td>
+            </tr>
+            <tr>
+              <td>
+                <button data-ng-click="addRow()"> Add Row</button>
+              </td>
+              <td>
+                <input type="text" size="5" data-ng-model="value1">
+              </td>
+              <td>
+                <input type="text" size="5" data-ng-model="value2">
+              </td>
+              <td>
+                <input type="text" size="60" data-ng-model="value3">
+              </td>
+              <td>
+                <input type="text" size="5" data-ng-model="value4">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Try
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="5" value="{{ 1 + 2 }}" disabled="true">
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="5" value="Apple" disabled="true">
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="60"
+                       value='<button type="button" ng-click="click()" >click() in example controller</button>'
+                       disabled="true">
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="5" value="Fruits" disabled="true">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Try
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="5" value="{{ 1 / 2 }}" disabled="true">
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="5" value="{{'A' + 'B'}}" disabled="true">
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="60"
+                       value='<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>' disabled="true">
+              </td>
+              <td>
+                <input ng-non-bindable type="text" size="5" value="<i>Angular</i>" disabled="true">
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/simars">simars</a></p>
@@ -59,6 +133,11 @@ Try <a href="http://demo.simars.io/angular-tables/">zero-config Demo here</a>,</
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+    <script type="text/javascript" src="javascripts/lib/angular-tables.js"></script>
+    <script type="text/javascript" src="javascripts/example/example.js"></script>
   </body>
 </html>
